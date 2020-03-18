@@ -1,0 +1,100 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+body,html{
+  font-family: 'Sen', sans-serif;
+  height: 100%;
+}
+
+.baseline{
+	font-size:12px;
+	font-style: italic;
+	color: rgba(255,255,255,0.5);
+}
+#before .logo{
+	margin-top:35vh;
+}
+#app {
+  font-family: 'Sen', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+	height: 100%;
+  background: linear-gradient(129deg, rgba(60,68,149,1) 0%, rgba(208,25,73,1) 100%); 
+}
+.btn{
+	border-radius: 30px;
+	text-align: center;
+	width: 190px;
+	padding: 10px 30px;
+	cursor: pointer;
+}
+.btn.white{
+	font-family: 'Sen', sans-serif;
+	border: 1px solid #fff;
+	background: none;
+	display: block;
+	margin: 0 auto;
+	margin-top: 20px;
+	font-size: 16px;
+	color: #fff;
+}
+.btn.google{
+	font-family: 'Sen', sans-serif;
+	border: 1px solid #fff;
+	background: #fff;
+	display: block;
+	margin: 0 auto;
+	margin-top: 20px;
+	font-size: 16px;
+	color: #fff;
+}
+.b{color: #3783fa;}
+.v{color: #0f9d57;}
+.r{color: #ec402b;}
+.j{color: #f4b400;}
