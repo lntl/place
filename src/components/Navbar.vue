@@ -5,9 +5,7 @@
     <p class="baseline">
       the place to watch everything.
     </p>
-    <button class="btn white">Sign up</button>
-    <button class="btn google"><span class="b">G</span><span class="r">o</span><span class="j">o</span><span class="b">g</span><span class="v">l</span><span class="r">e</span></button>
-    {{user.name}}
+    <!-- {{user.name}} -->
   </div>
 </div>
 </template>
@@ -19,6 +17,7 @@ export default {
   name: 'Navbar',
     data(){
     return{
+
     }
   },
   computed: {

@@ -50,6 +50,47 @@ body,html{
   font-family: 'Sen', sans-serif;
   height: 100%;
 }
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+button,
+input,
+optgroup,
+select,
+textarea,html input[type="button"],
+input[type="reset"],
+input[type="submit"],button[disabled],
+html input[disabled],button::-moz-focus-inner,
+input::-moz-focus-inner, input[type="checkbox"],
+input[type="radio"], input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button, input[type="search"], input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration{
+	border:none;
+	background-image:none;
+	background-color:transparent;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	outline: none;
+}
+input:focus, textarea:focus, select:focus{
+	outline: none;
+}
+::placeholder {
+  color: #ffffff;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #ffffff;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #ffffff;
+}
 
 .baseline{
 	font-size:12px;
@@ -73,6 +114,7 @@ body,html{
 	width: 190px;
 	padding: 10px 30px;
 	cursor: pointer;
+	transition: 1s;
 }
 .btn.white{
 	font-family: 'Sen', sans-serif;
@@ -84,6 +126,26 @@ body,html{
 	font-size: 16px;
 	color: #fff;
 }
+.btn.white:hover{
+	background:#ffffff;
+	color: #000000;
+}
+.btn.back{
+	font-family: 'Sen', sans-serif;
+	border: 1px solid #c53524;
+	background: none;
+	display: block;
+	margin: 0 auto;
+	margin-top: 20px;
+	font-size: 16px;
+	padding: 5px 20px;
+	width: auto;
+	color: #c53524;
+}
+.btn.back:hover{
+	background:#c53524;
+	color: #ffffff;
+}
 .btn.google{
 	font-family: 'Sen', sans-serif;
 	border: 1px solid #fff;
@@ -94,7 +156,34 @@ body,html{
 	font-size: 16px;
 	color: #fff;
 }
+.btn.google:hover{
+	background: #3783fa;
+	border-color: #3783fa;
+}
+.btn.google span{
+	transition: 1s;
+}
+.btn.google:hover span{
+	color: #ffffff;
+}
 .b{color: #3783fa;}
 .v{color: #0f9d57;}
 .r{color: #ec402b;}
 .j{color: #f4b400;}
+
+.field{
+	font-family: 'Sen', sans-serif;
+	color: #ffffff;
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: none;
+	text-align: center;
+	display: block;
+	margin: 0 auto;
+	width: 200px;
+	padding-bottom: 5px;
+	margin-top: 15px;
+}
+.sign{
+	margin-top: 65px;
+}
