@@ -187,3 +187,65 @@ input:focus, textarea:focus, select:focus{
 .sign{
 	margin-top: 65px;
 }
+
+#load-wrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(129deg, rgba(60,68,149,0.9) 0%, rgba(208,25,73,0.9) 100%); 
+  top: 0;
+}
+.mention{
+	color: rgba(255,255,255,0.5);
+	font-size: 12px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+.loader{
+    color: #ffffff;
+    position: relative;
+    margin: 0 auto;
+    width: 100px;
+    display: inline-block;
+    top: calc(50vh - 30px);
+}
+.loader span:nth-child(2) {
+  top: 30px;
+  width: 12px;
+  opacity: 0.7;
+  animation: line-in 1.2s infinite;
+}
+.loader span:nth-child(3) {
+  top: 35px;
+  opacity: 1;
+  width: 50px;
+  animation: line-in 1.8s infinite;
+}
+.loader span:nth-child(4) {
+  top: 40px;
+   width: 30px;
+  opacity: 0.5;
+  animation: line-in 1.5s infinite;
+}
+.loader span{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 3px;
+}
+@keyframes line-in {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 70%;
+  }
+  100% {
+    left: 0%;
+  }
+}

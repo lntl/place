@@ -15,7 +15,10 @@ export default new Vuex.Store({
 	},
 	actions: {
     getUsers: function({commit}){
-			commit('setUser', {name:"Lucas"});
+			// axios.get('http://localhost/api_place/getUser').then(response => {
+      //   commit('setUser', response.data);
+      // })
+			commit('setUser', {name:"Lucas", loading_content:false});
 		}
 	}
 })
