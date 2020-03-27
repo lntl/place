@@ -1,6 +1,11 @@
 <template>
-	<div class="sign">
-		Google login
+	<div id="load-wrap">
+		<span class="loader">
+			<p>Loading</p>
+			<span></span>
+			<span></span>
+			<span></span>
+		</span>
 	</div>
 </template>
 
@@ -8,22 +13,25 @@
 import { mapState } from "vuex";
 
 export default {
-  name: 'Signup',
-    data(){
-    return{
-
-    }
-  },
+  name: 'Loader',
+	data(){
+		return{
+		}
+	},
   computed: {
     ...mapState({
       user: state => state.user,
     })
-  },
+	},
+	methods: {
+    
+	},
   mounted: function(){
+    
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 </style>

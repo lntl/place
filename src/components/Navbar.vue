@@ -26,7 +26,6 @@ export default {
     })
   },
   mounted: function(){
-    this.$store.dispatch('getUsers');
   }
 }
 </script>

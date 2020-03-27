@@ -13,7 +13,6 @@
 		<GgleSign v-if="google"></GgleSign>
 	</transition>
 	<button class="btn back" v-if="toggle" v-on:click="togglemod('back')">Cancel</button>
-	
 </div>
 </template>
 
@@ -23,7 +22,7 @@ import Signup from '../components/Signup.vue'
 import GgleSign from '../components/GgleSign.vue'
 
 export default {
-  name: 'Navbar',
+  name: 'Login',
     data(){
     return{
 			signup: false,
@@ -57,7 +56,6 @@ export default {
     })
   },
   mounted: function(){
-    this.$store.dispatch('getUsers');
   }
 }
 </script>

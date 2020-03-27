@@ -1,13 +1,6 @@
 <template>
   <div>
-    <div v-if="loading"  id="load-wrap">
-      <span class="loader">
-        <p>Loading</p>
-        <span></span>
-        <span></span>
-        <span></span>
-      </span>
-    </div>
+    <Loader v-if="loading"></Loader>
     <form class="sign">
       <input type="email" class="field" name="email" placeholder="youremail@mail.com" onfocus="this.placeholder=''" onblur="this.placeholder='youremail@mail.com'">
       <input type="password" class="field" name="password" placeholder="*********" onfocus="this.placeholder=''" onblur="this.placeholder='*********'">
@@ -19,6 +12,7 @@
 
 <script>
 import { mapState } from "vuex";
+import Loader from '../components/Loader.vue'
 
 export default {
   name: 'Signup',
@@ -27,6 +21,9 @@ export default {
       loading: false
     }
   },
+  components: {
+    Loader
+	},
   computed: {
     ...mapState({
       user: state => state.user,
@@ -37,10 +34,16 @@ export default {
       var v = this;
        if(v.loading===false){
          v.loading=true;
+         this.$store.dispatch('getLoader',true);
        }
       setTimeout(function(){
         v.loading = false;
+        v.setload();
       },5000)
+    },
+    setload(){
+      this.$store.dispatch('getLoader',false);
+      this.$router.push('/home');
     }
 	},
   mounted: function(){
