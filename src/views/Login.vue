@@ -2,15 +2,9 @@
 <div class="relat">
 	<div class="btn-sign sign" v-if="!toggle">
 		<button class="btn white" v-on:click="togglemod('signup')">Sign up</button>
-		<button class="btn google" v-on:click="togglemod('google')">
-		<span class="b">G</span><span class="r">o</span><span class="j">o</span><span class="b">g</span><span class="v">l</span><span class="r">e</span>
-		</button>
 	</div>
 	<transition name="bounce">
 		<Signup v-if="signup"></Signup>
-	</transition>
-	<transition name="bounce">
-		<GgleSign v-if="google"></GgleSign>
 	</transition>
 	<button class="btn back" v-if="toggle" v-on:click="togglemod('back')">Cancel</button>
 </div>
@@ -19,7 +13,6 @@
 <script>
 import { mapState } from "vuex";
 import Signup from '../components/Signup.vue'
-import GgleSign from '../components/GgleSign.vue'
 
 export default {
   name: 'Login',
@@ -31,8 +24,7 @@ export default {
     }
 	},
 	components: {
-		Signup,
-		GgleSign
+		Signup
 	},
 	methods: {
     togglemod: function (event) {

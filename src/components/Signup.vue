@@ -1,11 +1,11 @@
 <template>
   <div>
     <Loader v-if="loading"></Loader>
-    <form class="sign">
-      <input type="email" class="field" name="email" placeholder="youremail@mail.com" onfocus="this.placeholder=''" onblur="this.placeholder='youremail@mail.com'">
-      <input type="password" class="field" name="password" placeholder="*********" onfocus="this.placeholder=''" onblur="this.placeholder='*********'">
+    <form class="sign" @submit="checkForm" method="post">
+      <input type="email" v-model="email" class="field" name="email" placeholder="youremail@mail.com" onfocus="this.placeholder=''" onblur="this.placeholder='youremail@mail.com'">
+      <input type="password"  v-model="password" class="field" name="password" placeholder="*********" onfocus="this.placeholder=''" onblur="this.placeholder='*********'">
       <div class="mention">By clicking any of the Sign Up buttons,<br>I agree to the terms of service</div>
-      <button class="btn white" v-on:click="loader">Sign up</button>
+      <button class="btn white" >Sign up</button>
     </form>
   </div>
 </template>
@@ -18,7 +18,9 @@ export default {
   name: 'Signup',
     data(){
     return{
-      loading: false
+      loading: false,
+      email:"",
+      password:""
     }
   },
   components: {
@@ -30,26 +32,31 @@ export default {
     })
 	},
 	methods: {
-    loader () {
+    checkForm (e) {
+      e.preventDefault()
       var v = this;
-       if(v.loading===false){
-         v.loading=true;
-         this.$store.dispatch('getLoader',true);
-       }
+      var datas = {
+        email : v.email,
+        password : v.password
+      }
+      if(v.loading===false){
+        v.loading=true;
+        this.$store.dispatch('getUsers',datas);
+      }
       setTimeout(function(){
         v.loading = false;
-        v.setload();
-      },5000)
+        v.setLoad();
+      },2000)
     },
-    setload(){
-      this.$store.dispatch('getLoader',false);
+    setLoad(){
       this.$router.push('/home');
     }
 	},
   mounted: function(){
-    this.$store.dispatch('getUsers');
+    //this.$store.getters('getUsers');
   }
 }
+ 
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

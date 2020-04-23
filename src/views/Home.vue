@@ -1,31 +1,52 @@
 <template>
 	<div>
-		<router-link to="/"  class="btn">Cancel</router-link>
+		<div class="wrapper-card">
+			<p>Hello {{user.first_name}}</p>
+			<div class="user-info">
+				email : {{user.email}}<br/>
+				account valid : <div v-if="(user.is_actv===0)">Not valid</div>
+			</div>
+		</div>
+    <router-link to="/" class="btn white" v-if="isLoggedIn">Logout</router-link> 
 		<transition name="bounce">
-			<Mappix></Mappix>
 		</transition>
 	</div>
 </template>
 <script>
 import { mapState } from "vuex";
-import Mappix from '../components/Mappix.vue'
 
 export default {
   name: 'Home',
     data(){
     return{
+			user: this.state.user
     }
 	},
 	components: {
-		Mappix,
 	},
 	methods: {
+		logout() {
+			var t = this;
+			this.$store.dispatch('logout');
+			t.routeOut();
+		},
+		routeOut(){
+			this.$router.push('/');
+		}
 	},
   computed: {
-    ...mapState({
-    })
-  },
+		...mapState({
+			user: state => state.user,
+		}),
+		isLoggedIn() {
+      return this.$store.getters.isLoggedIn;
+    }
+	},
   mounted: function(){
+		console.log( this.$store.getters.user)
+		if(!this.isLoggedIn){
+			this.$router.push('/');
+		}
   }
 }
 </script>

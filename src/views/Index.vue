@@ -18,6 +18,9 @@ export default {
   components: {
     Navbar,
     Login
+  },
+  mounted: function(){
+		console.log(this.isLoggedIn)
   }
 }
 </script>

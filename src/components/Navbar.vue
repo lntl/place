@@ -1,9 +1,9 @@
 <template>
 <div class="">
   <div class="nav" id="before">
-    <img class="logo" alt="Vue logo" src="../assets/logo.png">
+    <img class="logo" alt="Vue logo" src="../assets/logo.svg">
     <p class="baseline">
-      the place to watch everything.
+      the bonbail messire everywhere.
     </p>
     <!-- {{user.name}} -->
   </div>
